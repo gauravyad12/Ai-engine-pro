@@ -1,0 +1,230 @@
+#mwai-form-id {
+  --mwai-spacing: 15px;
+  --mwai-fontSize: 15px;
+  --mwai-borderRadius: 10px;
+  --mwai-fontColor: #FFFFFF;
+  --mwai-backgroundPrimaryColor: #454654;
+  --mwai-backgroundSecondaryColor: #343541;
+  --mwai-aiAvatarBackgroundColor: #10a37f;
+  --mwai-userAvatarBackgroundColor: #135ea4;
+  --mwai-headerButtonsColor: #FFFFFF;
+  --mwai-errorBackgroundColor: #6d2f2a;
+  --mwai-errorTextColor: #FFFFFF;
+}
+
+#mwai-form-id {
+  padding: var(--mwai-spacing);
+  font-size: var(--mwai-fontSize);
+  color: var(--mwai-fontColor);
+  background: var(--mwai-backgroundSecondaryColor);
+  border-radius: var(--mwai-borderRadius);
+}
+
+#mwai-form-id * {
+  box-sizing: border-box;
+}
+
+#mwai-form-id fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+#mwai-form-id fieldset input[type="text"], #mwai-form-id fieldset input[type="email"], #mwai-form-id fieldset input[type="tel"], #mwai-form-id fieldset input[type="url"], #mwai-form-id fieldset input[type="password"], #mwai-form-id fieldset input[type="number"], #mwai-form-id fieldset input[type="date"], #mwai-form-id fieldset input[type="datetime"], #mwai-form-id fieldset input[type="datetime-local"], #mwai-form-id fieldset input[type="month"], #mwai-form-id fieldset input[type="search"], #mwai-form-id fieldset input[type="time"], #mwai-form-id fieldset input[type="week"], #mwai-form-id fieldset select, #mwai-form-id fieldset textarea {
+  padding: calc(var(--mwai-spacing) * 2 / 3) var(--mwai-spacing);
+  border: 0;
+  width: 100%;
+  border-radius: var(--mwai-borderRadius);
+  font-size: var(--mwai-fontSize);
+  background: var(--mwai-backgroundPrimaryColor);
+  color: var(--mwai-fontColor);
+}
+
+#mwai-form-id fieldset select {
+  padding: calc(var(--mwai-spacing) * 2 / 3) var(--mwai-spacing);
+  border: 0;
+  width: 100%;
+  border-radius: var(--mwai-borderRadius);
+  font-size: var(--mwai-fontSize);
+  background: var(--mwai-backgroundPrimaryColor);
+  color: var(--mwai-fontColor);
+}
+
+#mwai-form-id fieldset textarea {
+  padding: calc(var(--mwai-spacing) * 2 / 3) var(--mwai-spacing);
+  border: 0;
+  width: 100%;
+  border-radius: var(--mwai-borderRadius);
+  font-family: inherit;
+  font-size: var(--mwai-fontSize);
+  background: var(--mwai-backgroundPrimaryColor);
+  color: var(--mwai-fontColor);
+}
+
+#mwai-form-id fieldset input[disabled], #mwai-form-id fieldset select[disabled], #mwai-form-id fieldset textarea[disabled] {
+  opacity: 0.25;
+}
+
+#mwai-form-id .mwai-form-submit button {
+  height: 45px;
+  background: none;
+  width: 100%;
+  color: var(--mwai-fontColor);
+  font-size: var(--mwai-fontSize);
+  background-color: var(--mwai-backgroundSecondaryColor);
+  border: 1px solid var(--mwai-backgroundPrimaryColor);
+  border-radius: var(--mwai-borderRadius);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  position: relative;
+}
+
+#mwai-form-id .mwai-form-submit button:hover {
+  background: var(--mwai-backgroundPrimaryColor);
+}
+
+#mwai-form-id .mwai-form-submit button[disabled] span {
+  opacity: 0.25;
+}
+
+#mwai-form-id .mwai-form-submit button[disabled]:hover {
+  background: none;
+  cursor: not-allowed;
+}
+
+#mwai-form-id .mwai-form-submit.mwai-loading button span {
+  opacity: 0;
+}
+
+#mwai-form-id .mwai-form-submit.mwai-loading button::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: var(--mwai-fontColor);
+  border-radius: 50%;
+  animation: mwai-button-spinner 1s ease infinite;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output {
+  font-size: var(--mwai-fontSize);
+  position: relative;
+  margin-top: var(--mwai-spacing);
+  padding: var(--mwai-spacing);
+  border: 1px solid var(--mwai-backgroundPrimaryColor);
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output.mwai-error {
+  background: var(--mwai-errorBackgroundColor);
+  color: var(--mwai-errorFontColor);
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output > *:first-child {
+  margin-top: 0;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output > *:last-child {
+  margin-bottom: 0;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output img {
+  max-width: 33%;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output div > *:first-child {
+  margin-top: 0;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-form-output div > *:last-child {
+  margin-bottom: 0;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: var(--mwai-spacing);
+  top: var(--mwai-spacing);
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button .mwai-copy-button-one {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: white;
+  opacity: 0.4;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button .mwai-copy-button-two {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-top: 6px;
+  margin-left: 6px;
+  background: white;
+  opacity: 0.6;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button:hover .mwai-copy-button-one {
+  opacity: 0.6;
+  margin-top: 0px;
+  margin-left: 6px;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button:hover .mwai-copy-button-two {
+  opacity: 1;
+  margin-top: 6px;
+  margin-left: 0px;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button.mwai-animate .mwai-copy-button-one {
+  opacity: 0;
+}
+
+#mwai-form-id .mwai-form-output-container .mwai-copy-button.mwai-animate .mwai-copy-button-two {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  margin-left: 2px;
+  opacity: 1;
+}
+
+#mwai-form-id .mwai-form-output-container:hover .mwai-copy-button {
+  opacity: 1;
+}
+
+#mwai-form-id .mwai-form-output-container.mwai-has-content {
+  display: block;
+}
+
+#mwai-form-id .wp-block-columns {
+  margin: 0;
+}
+
+@keyframes mwai-button-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

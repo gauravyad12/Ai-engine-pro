@@ -1,0 +1,225 @@
+#mwai-form-id {
+	--mwai-spacing: 15px;
+	--mwai-fontSize: 15px;
+	--mwai-borderRadius: 10px;
+	--mwai-fontColor: #FFFFFF;
+	--mwai-backgroundPrimaryColor: #454654;
+	--mwai-backgroundSecondaryColor: #343541;
+	--mwai-aiAvatarBackgroundColor: #10a37f;
+	--mwai-userAvatarBackgroundColor: #135ea4;
+	--mwai-headerButtonsColor: #FFFFFF;
+}
+
+#mwai-form-id {
+	padding: var(--mwai-spacing);
+	font-size: var(--mwai-fontSize);
+	color: var(--mwai-fontColor);
+	background: var(--mwai-backgroundSecondaryColor);
+	border-radius: var(--mwai-borderRadius);
+	
+	* {
+		box-sizing: border-box;
+	}
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10px;
+
+		input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="search"], input[type="time"], input[type="week"], select, textarea {
+			padding: calc(var(--mwai-spacing) * 2 / 3) var(--mwai-spacing);
+			border: 0;
+			width: 100%;
+			border-radius: var(--mwai-borderRadius);
+			font-size: var(--mwai-fontSize);
+			background: var(--mwai-backgroundPrimaryColor);
+			color: var(--mwai-fontColor);
+		}
+
+		select {
+			padding: calc(var(--mwai-spacing) * 2 / 3) var(--mwai-spacing);
+			border: 0;
+			width: 100%;
+			border-radius: var(--mwai-borderRadius);
+			font-size: var(--mwai-fontSize);
+			background: var(--mwai-backgroundPrimaryColor);
+			color: var(--mwai-fontColor);
+		}
+
+		textarea {
+			padding: calc(var(--mwai-spacing) * 2 / 3) var(--mwai-spacing);
+			border: 0;
+			width: 100%;
+			border-radius: var(--mwai-borderRadius);
+			font-family: inherit;
+			font-size: var(--mwai-fontSize);
+			background: var(--mwai-backgroundPrimaryColor);
+			color: var(--mwai-fontColor);
+		}
+
+		input[disabled], select[disabled], textarea[disabled] {
+			opacity: 0.25;
+		}
+	}
+
+	.mwai-form-submit {
+
+		button {
+			height: 45px;
+			background: none;
+			width: 100%;
+			color: var(--mwai-fontColor);
+			font-size: var(--mwai-fontSize);
+			background-color: var(--mwai-backgroundSecondaryColor);
+			border: 1px solid var(--mwai-backgroundPrimaryColor);
+			border-radius: var(--mwai-borderRadius);
+			cursor: pointer;
+			transition: all 0.2s ease-out;
+			position: relative;
+
+			&:hover {
+				background: var(--mwai-backgroundPrimaryColor);
+			}
+		}
+
+		button[disabled] {
+
+			span {
+				display: none;
+			}
+	
+			&::after {
+				content: '';
+				position: absolute;
+				width: 18px;
+				height: 18px;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				border: 3px solid transparent;
+				border-top-color: var(--mwai-fontColor);
+				border-radius: 50%;
+				animation: mwai-button-spinner 1s ease infinite;
+			}
+		}
+	}
+
+	.mwai-form-output-container {
+		position: relative;
+		margin-top: var(--mwai-spacing);
+		padding: var(--mwai-spacing);
+		border: 1px solid var(--mwai-backgroundPrimaryColor);
+		display: none;
+
+		.mwai-form-output {
+			font-size: var(--mwai-fontSize);
+
+			& > *:first-child {
+				margin-top: 0;
+			}
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+	
+			img {
+				max-width: 33%;
+			}
+		}
+
+		.mwai-copy-button {
+			opacity: 0;
+			transition: all 0.3s ease-out;
+			width: 22px;
+			height: 22px;
+			position: absolute;
+			right: var(--mwai-spacing);
+			top: var(--mwai-spacing);
+			
+			.mwai-copy-button-one {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				margin-top: 0px;
+				margin-left: 0px;
+				background: white;
+				opacity: 0.4;
+				transition: all 0.2s ease-in;
+				cursor: pointer;
+				border-radius: 2px;
+			}
+
+			.mwai-copy-button-two {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				margin-top: 6px;
+				margin-left: 6px;
+				background: white;
+				opacity: 0.6;
+				transition: all 0.2s ease-in;
+				cursor: pointer;
+				border-radius: 2px;
+			}
+
+			&:hover {
+				.mwai-copy-button-one {
+					opacity: 0.6;
+					margin-top: 0px;
+    			margin-left: 6px;
+				}
+
+				.mwai-copy-button-two {
+					opacity: 1;
+					margin-top: 6px;
+					margin-left: 0px;
+				}
+			}
+
+			&.mwai-animate {
+
+				.mwai-copy-button-one {
+					opacity: 0;
+				}
+
+				.mwai-copy-button-two {
+					width: 18px;
+					height: 18px;
+					margin-top: 2px;
+					margin-left: 2px;
+					opacity: 1;
+				}
+			}
+		}
+
+		&:hover {
+			.mwai-copy-button {
+				opacity: 1;
+			}
+		}
+
+		&.mwai-has-content {
+			display: block;
+		}
+	}
+
+	.wp-block-columns {
+		margin: 0;
+	}
+
+}
+
+@keyframes mwai-button-spinner {
+
+	from {
+		transform: rotate(0turn);
+	}
+	to {
+		transform: rotate(1turn);
+	}
+}
